@@ -3,5 +3,5 @@
 	Permission check: <?=isset($_SESSION['permission']) ? $_SESSION['permission'] : "You don't have a permission level." ?>
 <?php else : ?>
 	<h1>Access allowed</h1>
-	<p>Your permission level is <?=$_SESSION['permission'] ?></p>
+	<p>A jogosultsági szinted: <?=$_SESSION['permission'] ?></p>
 <?php endif; ?>
