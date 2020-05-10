@@ -12,7 +12,7 @@
 				}
  	?>
 <?php 
-	$query = "SELECT id, norm_dupe, Planting, harvest_choice, Fertilizer, comment  FROM project ORDER BY id ASC";
+	$query = "SELECT id, Quantity, Planting, harvest_choice, Fertilizer, comment  FROM project ORDER BY id ASC";
 	require_once DATABASE_CONTROLLER;
 	$project = getList($query);
 ?>
@@ -23,7 +23,7 @@
 			<thead>
 				<tr>
 					<th scope="col">#</th>
-					<th scope="col" style="text-align:center">Kolónia darabszám</th>
+					<th scope="col" style="text-align:center">Darabszám</th>
 					<th scope="col">Ültetés tipusa</th>
 					<th scope="col" style="text-align:center">Aratni kell?</th>
 					<th scope="col" style="text-align:center">Trágyázni kell?</th>
@@ -38,7 +38,7 @@
 					<?php $i++; ?>
 					<tr>
 						<th scope="row"><?=$i ?></th>
-						<td style="text-align:center"><?=$w['norm_dupe'] ?></a></td>
+						<td style="text-align:center"><?=$w['Quantity'] ?></a></td>
 						<td><?=$w['Planting'] ?></td>
 						<td style="text-align:center"><?=$w['harvest_choice']== null  ? 'nem' : 'igen' ?></td>
 						<td style="text-align:center"><?=$w['Fertilizer'] == null ? 'nem' : 'igen'  ?></td>

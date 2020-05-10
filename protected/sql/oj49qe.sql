@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1:3308
--- Létrehozás ideje: 2020. Ápr 10. 10:14
+-- Létrehozás ideje: 2020. Máj 10. 14:24
 -- Kiszolgáló verziója: 8.0.18
 -- PHP verzió: 7.3.12
 
@@ -30,29 +30,23 @@ SET time_zone = "+00:00";
 
 DROP TABLE IF EXISTS `project`;
 CREATE TABLE IF NOT EXISTS `project` (
-  `norm_dupe` int(10) NOT NULL,
+  `Quantity` int(10) NOT NULL,
   `Planting` varchar(10) CHARACTER SET utf8 COLLATE utf8_hungarian_ci NOT NULL,
-  `harvest_choice` varchar(5) CHARACTER SET utf8 COLLATE utf8_hungarian_ci DEFAULT 'nem',
-  `Fertilizer` varchar(5) CHARACTER SET utf8 COLLATE utf8_hungarian_ci DEFAULT 'nem',
+  `harvest_choice` varchar(5) CHARACTER SET utf8 COLLATE utf8_hungarian_ci DEFAULT NULL,
+  `Fertilizer` varchar(5) CHARACTER SET utf8 COLLATE utf8_hungarian_ci DEFAULT NULL,
   `comment` varchar(250) COLLATE utf8_hungarian_ci NOT NULL,
   `id` int(11) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
 
 --
 -- A tábla adatainak kiíratása `project`
 --
 
-INSERT INTO `project` (`norm_dupe`, `Planting`, `harvest_choice`, `Fertilizer`, `comment`, `id`) VALUES
-(12, 'Cserépben', 'igen', 'igen', 'trágyázva van a szar', 1),
-(8, 'Vadon', 'igen', 'igen', 'kecsené', 2),
-(12, 'Cserépben', 'igen', 'igen', 'asdasda', 4),
-(12, 'Cserépben', 'igen', NULL, 'sadasfasfas', 5),
-(2, 'Vadon', NULL, NULL, 'teszt200', 6),
-(2, 'Vadon', NULL, NULL, 'teszt200', 7),
-(12, 'Cserépben', NULL, NULL, '12314', 8),
-(12, 'Cserépben', NULL, 'igen', '4124', 9),
-(12, 'Cserépben', NULL, NULL, 'miért', 10);
+INSERT INTO `project` (`Quantity`, `Planting`, `harvest_choice`, `Fertilizer`, `comment`, `id`) VALUES
+(10, 'Cserépben', '', '', 'kaktusz', 29),
+(66, 'Vadon', '', '', 'Búza mag', 30),
+(12, 'Cserépben', 'igen', '', 'Rózsa', 31);
 
 -- --------------------------------------------------------
 

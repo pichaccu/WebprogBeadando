@@ -6,7 +6,7 @@
 else: 
 	if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['editProject'])){
 		$postData = [
-			'norm_dupe' => $_POST['norm_dupe'],
+			'Quantity' => $_POST['Quantity'],
 			'Planting' => $_POST['Planting'],
 			'harvest_choice' => $_POST['harvest_choice'],
 			'Fertilizer' => $_POST['Fertilizer'],
@@ -16,12 +16,12 @@ else:
 		if($postData['id'] != $_GET['w']) {
 			echo "Hiba a dolgozó azonosítása során!";
 		} else {
-			if(empty($postData['norm_dupe']) || empty($postData['Planting'])) {
+			if(empty($postData['Quantity']) || empty($postData['Planting'])) {
 				echo "Hiányzó adat(ok)!";}	
 			 else {			
-				$query = "UPDATE project SET norm_dupe = :norm_dupe, Planting = :Planting, harvest_choice = :harvest_choice, Fertilizer = :Fertilizer, comment = :comment WHERE id = :id";
+				$query = "UPDATE project SET Quantity = :Quantity, Planting = :Planting, harvest_choice = :harvest_choice, Fertilizer = :Fertilizer, comment = :comment WHERE id = :id";
 				$params = [
-					':norm_dupe' => $postData['norm_dupe'],
+					':Quantity' => $postData['Quantity'],
 					':Planting' => $postData['Planting'],
 					':harvest_choice' => $postData['harvest_choice'],
 					':Fertilizer' => $postData['Fertilizer'],
@@ -35,7 +35,7 @@ else:
 			}
 		}
 	}
-	$query = "SELECT norm_dupe, Planting, harvest_choice, Fertilizer, comment, id FROM project WHERE id = :id";
+	$query = "SELECT Quantity, Planting, harvest_choice, Fertilizer, comment, id FROM project WHERE id = :id";
 	$params = [':id' => $_GET['w']];
 	require_once DATABASE_CONTROLLER;
 	$project = getRecord($query, $params);
@@ -46,8 +46,8 @@ else:
 				<input type="hidden" name="projectId" value="<?=$project['id'] ?>">
 				<div class="form-row">
 					<div class="form-group col-md-6">
-						<label for="projectdb">Kolónia darabszám</label>
-						<input type="text" class="form-control" id="projectdb" name="norm_dupe" value="<?=$project['norm_dupe'] ?>">
+						<label for="projectdb">Darabszám</label>
+						<input type="text" class="form-control" id="projectdb" name="Quantity" value="<?=$project['Quantity'] ?>">
 					</div>
 					<div class="form-group col-md-6">
 						<label for="projectultetestipus">Ültetés Tipusa</label>

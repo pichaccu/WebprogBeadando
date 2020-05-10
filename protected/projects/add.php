@@ -5,19 +5,19 @@
 	<?php
 	if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['addProject'])) {
 		$postData = [
-			'norm_dupe' => $_POST['norm_dupe'],
+			'Quantity' => $_POST['Quantity'],
 			'Planting' => $_POST['Planting'],
 			'harvest_choice' => $_POST['harvest_choice'],
 			'Fertilizer' => $_POST['Fertilizer'],
 			'comment' => $_POST['comment']
 		];
 
-		if(empty($postData['norm_dupe']) || empty($postData['Planting'])) {
+		if(empty($postData['Quantity']) || empty($postData['Planting'])) {
 			echo "Hiányzó adat(ok)!";
 		} else {
-			$query = "INSERT INTO project (norm_dupe, Planting, harvest_choice, Fertilizer, comment) VALUES (:norm_dupe, :Planting, :harvest_choice, :Fertilizer, :comment)";
+			$query = "INSERT INTO project (Quantity, Planting, harvest_choice, Fertilizer, comment) VALUES (:Quantity, :Planting, :harvest_choice, :Fertilizer, :comment)";
 			$params = [
-				':norm_dupe' => $postData['norm_dupe'],
+				':Quantity' => $postData['Quantity'],
 				':Planting' => $postData['Planting'],
 				':harvest_choice' => $postData['harvest_choice'],
 				':Fertilizer' => $postData['Fertilizer'],
@@ -34,8 +34,8 @@
 	<form method="post">
 		<div class="form-row">
 			<div class="form-group col-md-6">
-				<label for="norm_dupe">Kolónia létszáma</label>
-				<input type="number"  min="0" value="12" class="form-control input_listen" id="norm_dupe" name="norm_dupe">
+				<label for="Quantity">Darabszám</label>
+				<input type="number"  min="0" value="12" class="form-control input_listen" id="Quantity" name="Quantity">
 			</div>
 
 			<div class="form-group col-md-6">
@@ -50,15 +50,20 @@
 		<div class="form-row">
 			<div class="form-group col-md-12">
 				<label for="harvest_choice">Aratni kell?</label>
-					<input type="checkbox" name="harvest_choice" id="aratva" value="igen" class="form-control simplebox input_listen" checked="checked">	
+						<select class="form-control" id="aratva" name="harvest_choice">
+		      		<option value= >nem</option>
+		      		<option value="igen">igen</option>
+						</select>	
 			</div>
 		</div>
 
 		<div class="form-row">
 			<div class="form-group col-md-12" >
 		    	<label for="Fertilizer">Trágyázni kell?</label>
-					<input type="checkbox" name="Fertilizer" id="tragyazva" value="igen" class="form-control simplebox input_listen">
-		    	</select>
+						<select class="form-control" id="tragyazva" name="Fertilizer">
+		      		<option value= >nem</option>
+		      		<option value="igen">igen</option>
+						</select>	
 		  	</div>
 		</div>
 
