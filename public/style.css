@@ -38,3 +38,11 @@ width: 100px !important;
 #Fertilizer1{
 width: 100px !important;
 }
+
+#homep{
+width: 1000px;
+height: 400px;
+position: relative;
+border: 0px;
+ right: -25%;
+}
