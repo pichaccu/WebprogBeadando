@@ -1,0 +1,40 @@
+
+body {
+	background-color: #E0F1FD;
+}
+
+#aratva{
+width: 2% !important;
+}
+#tragyazva{
+width: 2% !important;
+}
+
+#komment{
+width: 60%; !important;
+}
+
+#ulttipus{
+width: 200px !important;
+}
+
+#Header_kepj{
+float:right;
+display:block;
+text-align:right;
+}
+
+#Header_kep{
+float:left;
+display:block;
+text-align:left;
+}
+
+
+#harvest_choice1{
+width: 100px !important;
+}
+
+#Fertilizer1{
+width: 100px !important;
+}
